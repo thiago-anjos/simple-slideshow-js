@@ -65,6 +65,7 @@ var bulletsClassesNovo = document.getElementById("bullets").childNodes;
 			imagemAtual--;
 			posicaoTransform = posicaoTransform - larguraBanner;
 			containerImagens.style.transform = "translateX("+ (-posicaoTransform) +"px)";
+			containerImagens.style.transform = "-ms-translateX("+ (-posicaoTransform) +"px)";
 			console.log(imagemAtual);
 			console.log(posicaoTransform);
 			
@@ -94,7 +95,8 @@ var bulletsClassesNovo = document.getElementById("bullets").childNodes;
 		if(imagemAtual < numeroImagens){
 			imagemAtual++;
 			posicaoTransform = larguraBanner * imagemAtual;
-			containerImagens.style.transform = "translateX("+-posicaoTransform+"px)"; 
+			containerImagens.style.transform = "translateX("+-posicaoTransform+"px)";
+			containerImagens.style.transform = "-ms-translateX("+-posicaoTransform+"px)"; 			
 			
 			var st = window.getComputedStyle(containerImagens, null);
 			var existeTransformacao = st.getPropertyValue("-webkit-transform") ||
@@ -152,8 +154,13 @@ for (var i = 0, len = botoes.children.length; i < len; i++)
 				document.querySelector(".next").style.display = "block";
 			}
 			
+			if(index > 0 && index < numeroImagens){
+				document.querySelector(".next").style.display = "block";
+				document.querySelector(".prev").style.display = "block";
+			}
+			
 			imagemAtual = index;
-			console.log(imagemAtual);
+
 			
         }    
     })(i);
