@@ -1,0 +1,45 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+#containerBanners{
+	width: 100%;
+	max-width: 900px;
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#containerBanners .container{
+	transition: transform 1s;
+	transition-timing-function: linear;
+}
+
+#containerBanners img{
+	width: 100%;
+	display: inline-block;
+	margin-right: -4px;
+}
+
+/* Controles do banner */
+#botoesControle{width:900px; margin: 0 auto; margin-top:1em;}
+#botoesControle a{text-decoration:none; color:#666;}
+#botoesControle a:hover{color:red;}
+#botoesControle .prev{ margin-left:4em;  float:left;}
+#botoesControle .next{ margin-right:4em; float:right;}
+
+#controleBanner{width:100%;	height:auto;}
+#bullets{margin:0 auto; height:2em;}
+#bullets li{
+	float:left; 
+	background-color:gray; 
+	width:1.5em; 
+	height:1.5em; 
+	list-style-type:none; 
+	border-radius:1em; 
+	margin:0.5em; 
+	cursor: pointer;
+}
+#bullets .active{background-color:red; }
